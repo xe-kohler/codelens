@@ -16,14 +16,14 @@ export default function Header() {
       {/* Center: Tagline */}
       <div className="text-left">
         <p className="text-sm lg:text-md font-medium text-stone-400">
-         Your AI-Powered Python Investigator 🕵️‍♂️ 🐍
+         Your AI-Powered Python Investigator 🕵️‍♂️ 🐍  Built By Xavier Kohler | React, Python, Gemini & GPT 🚀 Non-Commercial 💘
         </p>
       </div>
 
       {/* Right: GitHub Link */}
-      <div class="space-x-8">
+      <div className="space-x-8">
          <a
-          href="https://github.com/raghiiboiibaxtor/codelens"
+          href="https://github.com/xavedtheday/codelens"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm lg:text-sm font-light lg:font-medium"
@@ -31,12 +31,12 @@ export default function Header() {
           <span className="underline hover:italic">GitHub</span>
         </a>
            <a
-          href="https://rbxtr.web.app"
+          href="https://xekohler-portfolio.web.app"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm lg:text-sm font-light lg:font-medium "
         > 
-          <span className="underline hover:italic ml-2 text-[#EBEBEB] font-bold">@Raghiiboii Baxtor</span>
+          <span className="underline hover:italic ml-2 text-[#EBEBEB] font-bold">XEK: Portfolio</span>
         </a>
       </div>
     </header>
