@@ -1,5 +1,5 @@
 # CodeLens: An AI Code Investigator.
-## Developed By Raghiiboii Baxtor | 7 Oct '25
+## Developed By Xavier Kohler | 7 Oct '25
 
 Paste a code snippet in the block → **Investigate** it (Gemini) to detect language & errors → **Rewrite** it (GPT) to make changes and add comments.  
 Tools & Languages: React, Python FastAPI backend, logs to **Postgres (Supabase)**. 
@@ -8,7 +8,7 @@ This project is a free-first portfolio piece and is not used for capital/busines
 ---
 
 ## Skills Acquired:
-- **LLM pipeline:** FastAPI → Gemini/GPT Integration → structured JSON
+- **LLM pipeline:** FastAPI → Gemini Integration → structured JSON
 - **Full-stack:** React (Vite (Node.js) + Tailwind) + Python API 
 - **Cloud:** Frontend on AWS S3 (free tier), backend on free host 
 - **DB:** Postgres (Supabase) for request logs/latency
