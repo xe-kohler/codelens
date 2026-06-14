@@ -8,9 +8,7 @@ export default function GeminiRunner() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const API = import.meta.env.DEV
-  ? "http://127.0.0.1:8000"               // dev access
-  : import.meta.env.VITE_API_URL; // live backend on Render 
+  const API = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"; 
 
   async function handleInvestigate() {
     setError("");
@@ -78,10 +76,10 @@ export default function GeminiRunner() {
       {/* Input box */}
       <div className="flex flex-col gap-2 min-w-2xl max-w-4xl min-h-[500px] max-h-full">
         <label className="text-sm font-medium text-stone-400">
-          <span class="font-bold text-stone-200">Step 1:</span> Add your broken Python code 👇❤️‍🩹
+          <span className="font-bold text-stone-200">Step 1:</span> Add your broken Python code to the box👇❤️‍🩹
         </label>
         <label className="text-sm font-medium text-stone-400">
-          <span class="font-bold text-stone-200">Step 2:</span> Click Investigate 🕵️‍♂️🧩
+          <span className="font-bold text-stone-200">Step 2:</span> Click Investigate to get Gemini on the case🕵️‍♂️🧩
         </label>
         <textarea
           value={input}
@@ -113,7 +111,7 @@ export default function GeminiRunner() {
       {/* Output Section */}
        <div className="flex flex-col gap-2 min-w-2xl max-w-4xl min-h-[500px] max-h-full">
        <label className="text-sm font-medium text-stone-400">
-            <span class="font-bold text-stone-200">Step 3:</span> Grab your dreamy code & go! 🛸💫
+            <span className="font-bold text-stone-200">Step 3:</span> Grab your *fixed* dreamy code & go! 🛸💫
         </label>
          <label className="text-sm font-medium text-stone-400">
            --

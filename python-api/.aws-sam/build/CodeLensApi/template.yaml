@@ -1,0 +1,55 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "CodeLens API - Python code analysis with Gemini AI",
+  "Globals": {
+    "Function": {
+      "Timeout": 30,
+      "MemorySize": 512,
+      "Environment": {
+        "Variables": {
+          "GEMINI_API_KEY": "${GeminiApiKey}"
+        }
+      }
+    }
+  },
+  "Parameters": {
+    "GeminiApiKey": {
+      "Type": "String",
+      "Description": "Your Gemini API key"
+    }
+  },
+  "Resources": {
+    "CodeLensApi": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "FunctionName": "codelens-api",
+        "CodeUri": "./",
+        "Handler": "main.lambda_handler",
+        "Runtime": "python3.9",
+        "Architectures": ["x86_64"],
+        "Events": {
+          "ApiGatewayEvent": {
+            "Type": "ApiGatewayV2::Api",
+            "Properties": {
+              "Path": "/{proxy+}",
+              "Method": "ANY",
+              "Cors": {
+                "AllowCredentials": false,
+                "AllowHeaders": ["*"],
+                "AllowMethods": ["*"],
+                "AllowOrigins": ["*"]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ApiUrl": {
+      "Description": "API Gateway URL",
+      "Value": "!Sub https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod"
+    }
+  }
+}

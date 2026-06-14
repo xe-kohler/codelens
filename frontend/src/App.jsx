@@ -3,9 +3,7 @@ import GeminiRunner from "./components/GeminiRunner.jsx";
 import Header from "./components/Header.jsx";
 import InputCodeBlock from "./components/InputCodeBlock.jsx";
 
-const API_URL = import.meta.env.DEV
-  ? "http://127.0.0.1:8000"  // local backend when running `npm run dev`
-  : import.meta.env.VITE_API_URL; // live backend when deployed
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8001";
 
 async function checkBackend() { // Health check, Debugging purposes
   try {
